@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>Sign In</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link href="/css/project.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+			<body>
+				{{> toolbar }}
+				<div class="row"  style="background-color:silver;height:100%" >
+					<div class="col-md-12" align="center" style="padding-left: 10%;padding-right: 10%">
+						<br>
+						<br>
+						<form action="/signin" >
+							<div class="form-group row">
+								<label for="newEmail" class="col-sm-2 col-form-label" style="width: 25%">Email
+								</label>									
+								<div class="col-sm-8" style="width: 75%">		
+									<input type="email" class="form-control" id="newEmail" name="email" placeholder="Email" required>
+								</div>
+							</div>
+							<br>
+							<div class="form-group row">
+								<label for="newPassword" class="col-sm-2 col-form-label" style="width: 25%">Password
+								</label>
+								<div class="col-sm-8" style="width: 63%;padding-right: 2%;">
+									<input type="password" class="form-control" id="password1" name="newPassword" placeholder="Password" required>
+								</div>
+								<div class="col-sm-2" style="width: 10%;padding-left: 0%;">
+									<i class="fas fa-eye fa-2x licon fa-align-justify" id="passeye" onclick="showPassword()" style="color:#006A96">
+									</i>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="newPassword" class="col-sm-2 col-form-label" style="width: 25%">Confirm Password
+								</label>
+								<div class="col-sm-8" style="width: 75%">
+									<input type="password" class="form-control" id="password2" name="newPassword" placeholder="Confirm Password" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="newEmail" class="col-sm-2 col-form-label" style="width: 25%">University
+								</label>									
+								<div class="col-sm-8" style="width: 75%">		
+									<input type="text" class="form-control" id="newUniversity" name="newUniversity" placeholder="University" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-sm-12" align="center">
+									<button id="submitSignIn" type="submit" class="btn btn-primary" style="background-color:#006A96">Sign Up
+									</button>
+								</div>
+							</div>
+						</form>	
+					</div>
+				</div>
+			</body>
+		<script>
+			function showPassword() {
+	  		var x = document.getElementById("password2");
+	  		var y = document.getElementById("password1");
+	  		if (x.type === "password") {
+	    		x.type = "text";
+	  		} else {
+	    		x.type = "password";
+	  			}
+	  		if (y.type === "password") {
+	    		y.type = "text";
+	  		} else {
+	    		y.type = "password";
+	  			}
+			}
+		</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

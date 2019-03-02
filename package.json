@@ -1,0 +1,26 @@
+{
+  "name": "IntroHCI",
+  "version": "0.0.1",
+  "author": "Intro HCI Staff",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IntroHCI/lab4"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@vitalets/google-translate-api": "github:vitalets/google-translate-api",
+    "express": "3.x",
+    "express3-handlebars": "*",
+    "google-translate-api": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "lodash": "*"
+  },
+  "engines": {
+    "node": "8.9.x"
+  }
+}

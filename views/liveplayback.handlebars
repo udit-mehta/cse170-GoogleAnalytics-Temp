@@ -1,0 +1,199 @@
+<html>
+    <head>
+        <title>Playback</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            svg{
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            position:absolute;
+            }
+            h1{
+            width: 100%;
+            font-family: sans-serif;
+            position:absolute;
+            text-align:center;
+            color:white;
+            font-size: 18px;
+            top: 40%;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+            -moz-transition: opacity 1s ease-in-out;
+            -webkit-transition: opacity 1s ease-in-out;
+            }
+            h1 a{
+            color: #48b1f4;
+            text-decoration:none;
+            }
+            path{
+            stroke-linecap: square;
+            stroke: white;
+            stroke-width: 0.5px;
+            }
+        </style>
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+        <link href="/css/project.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+      {{> toolbar }}
+        <div class="row">
+            <div class="col-md-12" style="height:50%; background-color:white">
+                <svg preserveAspectRatio="none" id="visualizer" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <mask id="mask">
+                            <g id="maskGroup">
+                            </g>
+                        </mask>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff0a0a;stop-opacity:1" />
+                            <stop offset="20%" style="stop-color:#f1ff0a;stop-opacity:1" />
+                            <stop offset="90%" style="stop-color:#d923b9;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#050d61;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#gradient)" mask="url(#mask)"></rect>
+                </svg>
+            </div>
+        </div>
+
+        <div class="row" style="height: 12%; background-color:white">
+          <div class="col-md-2" style="background-color:white">
+            <a>
+            <i  class="fas fa-cog fa-lg modalpos" data-toggle="modal" data-target=".bd-example-modal-sm" ></i>
+                                      <!-- Modal -->
+                        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                              <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Language</label>
+                              </div>
+                              <select class="custom-select" id="languageSelect">
+                                <option value="en">English</option>
+                                <option value="nl">Dutch</option>
+                                <option value="ar">Arabic</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="hi">Hindi</option>
+                                <option value="ja">Japanese</option>
+                                <option value="tr">Turkish</option>
+                                <option value="sv">Swedish</option>
+                                <option value="ru">Russian</option>
+                                <option value="es">Spanish</option>
+                              </select>
+                            </div>
+                            <!--
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Font Size</label>
+                              </div>
+                              <select class="custom-select" id="inputGroupSelect01">
+                                <option selected>Choose...</option>
+                                <option value="1">Small</option>
+                                <option value="2">Medium</option>
+                                <option value="3">Large</option>
+                              </select>
+                            </div>
+
+                              <div><span class="label label-default"> Transcripts </span>  <input id="transcript" type="checkbox" checked data-toggle="toggle"></input> <br> <br></div>
+                              -->
+                              <!--
+                             <div><span class="label label-default"> Subtitles </span> <input id="subtitles" type="checkbox" checked data-toggle="toggle"></input> <br></div><br>-->
+                             <div class="modal-footer">
+                                <button type="button" class="btn btn-dark" data-dismiss="modal" id="Close">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+            </a>
+          </div>
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="col-md-9">
+                        <marquee class="text-muted" id="subtitles" style="font-size: 250%"> Lecture Begins - </marquee>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row" style="height: 50%; background-color:white">
+            <div class="col-md-12" >
+                <div class="card" style="height: 100%">
+                    <samp class="breadcrumb" id="transcript" style="height: 100%;font-size: 250%; overflow-y:scroll"> Lecture Begins -  </samp>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- References
+            HTML 5 Microphone Visualizer
+            A PEN BY Zachary Skalko
+            -->
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="js/liveplayback.js"></script>
+    <script>
+        window.onload = function () {
+          "use strict";
+          var paths = document.getElementsByTagName('path');
+          var visualizer = document.getElementById('visualizer');
+          var mask = visualizer.getElementById('mask');
+          var path;
+          var report = 0;
+
+          var soundAllowed = function (stream) {
+              //Audio stops listening in FF without // window.persistAudioStream = stream;
+              //https://bugzilla.mozilla.org/show_bug.cgi?id=965483
+              //https://support.mozilla.org/en-US/questions/984179
+              window.persistAudioStream = stream;
+              var audioContent = new AudioContext();
+              var audioStream = audioContent.createMediaStreamSource( stream );
+              var analyser = audioContent.createAnalyser();
+              audioStream.connect(analyser);
+              analyser.fftSize = 1024;
+
+              var frequencyArray = new Uint8Array(analyser.frequencyBinCount);
+              visualizer.setAttribute('viewBox', '0 0 255 255');
+
+                //Through the frequencyArray has a length longer than 255, there seems to be no
+              //significant data after this point. Not worth visualizing.
+              for (var i = 0 ; i < 255; i++) {
+                  path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                  path.setAttribute('stroke-dasharray', '4,1');
+                  mask.appendChild(path);
+              }
+              var doDraw = function () {
+                  requestAnimationFrame(doDraw);
+                  analyser.getByteFrequencyData(frequencyArray);
+                    var adjustedLength;
+                  for (var i = 0 ; i < 255; i++) {
+                        adjustedLength = Math.floor(frequencyArray[i]) - (Math.floor(frequencyArray[i]) % 5);
+                      paths[i].setAttribute('d', 'M '+ (i) +',255 l 0,-' + adjustedLength);
+                  }
+
+              }
+              doDraw();
+          }
+
+          var soundNotAllowed = function (error) {
+              console.log(error);
+          }
+
+          /*window.navigator = window.navigator || {};
+          /*navigator.getUserMedia =  navigator.getUserMedia       ||
+                                    navigator.webkitGetUserMedia ||
+                                    navigator.mozGetUserMedia    ||
+                                    null;*/
+          navigator.getUserMedia({audio:true}, soundAllowed, soundNotAllowed);
+
+};
+    </script>
+</html>

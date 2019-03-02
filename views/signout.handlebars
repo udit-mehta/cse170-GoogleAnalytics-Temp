@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>Sign In</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="/css/project.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	{{> toolbar }}
+		<form id="signInForm" role="form" method="get" action="/"> <!--TODO: Store Username/Password pairs & verify correctness -->
+			</br>
+			<div class="headers" align="center">Sign In</div>
+
+	    <div class="form-group">
+				</br>
+	      <label for="username" class="smalltxt">Username:</label>
+	      <input type="text" class="form-control" id="username" placeholder="Username" name="username" autocomplete="off" required>
+				<input type="checkbox" id="rememberUsername"> Remember Username <!-- TODO: Add way to remember the username using JSON-->
+				</br>
+			</div>
+
+	    <div class="form-group">
+	      <label for="password" class="smalltxt">Password:</label>
+				<div class=>
+					<input type="password" class="form-control" id="password" placeholder="Password" name="Password" autocomplete="off" required>
+					<i class="fas fa-eye fa-2x licon fa-align-justify" id="passeye" onclick="showPassword()"></i>
+			</div>
+
+			</br>
+			</br>
+	    <input type="submit" id="signInBtn" class="btn btn-default" value="Sign In"></input>
+		</form>
+		</br>
+	</div>
+
+<!--Script to show the password when the checkbox is clicked
+TODO: Move this to a signin.js file-->
+<script>
+	function showPassword() {
+	  var x = document.getElementById("password");
+	  if (x.type === "password") {
+	    x.type = "text";
+	  } else {
+	    x.type = "password";
+	  }
+	}
+</script>
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--<script src="js/signin.js"></script> -->
+</html>

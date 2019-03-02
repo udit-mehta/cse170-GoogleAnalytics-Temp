@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Speech To Text Demo</title>
+</head>
+<body>
+<h1> Speech To Text Demo  </h1>
+
+<h1 id="one"> SPEAK TO ME </h1>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+<script>
+if (annyang) {
+  // Let's define a command.
+  var commands = {
+    'Hello': function() { alert('Hello world!'); }
+  };
+
+  annyang.addCallback('result', function(userSaid, commandText, phrases) {
+	  console.log(userSaid); // sample output: 'hello'
+	  console.log(commandText); // sample output: 'hello (there)'
+	  console.log(phrases); // sample output: ['hello', 'halo', 'yellow', 'polo', 'hello kitty']
+	  document.getElementById('one').innerHTML =userSaid;
+	});
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening.
+  annyang.start();
+}
+</script>
+
+</body>
+</html>
