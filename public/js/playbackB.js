@@ -29,7 +29,8 @@ function initializePage() {
 	        i += 1;
     }
 
-    highlight_loop = setInterval(highlight, 250);
+    if( highlight_loop == '')
+   		 highlight_loop = setInterval(highlight, 250);
 
 	function Change(e) {    
 		var fromLang = language;
@@ -71,6 +72,24 @@ function initializePage() {
 		}*/
 		
 	};
+
+	function QuestionClicked(e) 
+	{   
+		console.log("Question Clicked");
+		ga('create','UA-135501908-1','auto');
+		ga("send", "event", "question", "click");
+	};
+
+	function CarouselClicked(e)
+	{
+		console.log("Carousel Clicked");
+		ga('create','UA-135501908-1','auto');
+		ga("send", "event", "slide", "click");
+	}
+
+	$(".card-header").click(QuestionClicked);
+	$(".carousel-control-prev").click(CarouselClicked);
+	$(".carousel-control-next").click(CarouselClicked);
 
 	$("#Close").click(Change);
 
