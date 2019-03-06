@@ -90,7 +90,7 @@ app.post('/', function(req, res) {
     data.email = req.body.email;
   if( req.body.password )
     data.password = req.body.password;
-  if (req.body.profilePicture)
+  if (req.body.profilePicture && !req.body.profilePicture.empty())
     data.profileURL = req.body.profilePicture;
   fs.writeFileSync(fileName, JSON.stringify(file));
   res.render('index', data);
