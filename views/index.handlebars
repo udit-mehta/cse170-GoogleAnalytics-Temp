@@ -30,7 +30,7 @@
 											<a class="dropdown-item" href="/?dropdown=Physics&professorName=Udit" id="classa">Physics</a>
 											<a class="dropdown-item" href="/?dropdown=Chemistry&professorName=Quentin" id="classb">Chemistry</a>
 											<a class="dropdown-item" href="/?dropdown=Math&professorName=Eric" id="classb">Math</a>
-											<a class="dropdown-item" href="/?dropdown=Recently_Uploaded&professorName=Udit" id="classb">Recently Uploaded</a>
+											<a class="dropdown-item" href="/?dropdown=Recently_Uploaded&professorName=Udit" id="classb">All classes</a>
 											<a class="dropdown-item" href="/?dropdown=Favourites&professorName=Quentin" id="classb">Favourites</a>
 									  </div>
 									</div>
@@ -39,7 +39,7 @@
 
 		 <div class="row" style="background-color:white; height:100%">
 			 {{#each records }}
-					<div class="col-md-4">
+					<div class="col-md-3">
 	        	<a href="/playback">
 			    		<div class="card">
 						    <img class="card-img-top" src="{{ picture }}" alt="Card image cap">
@@ -48,7 +48,7 @@
 							      		<span class="badge badge-success"> {{courseName}} </span>
 							      </h5>
 							      <p class="card-text">
-							      <span class="badge badge-info"> {{category}} </span> <span class="badge badge-primary"> Professor {{ professorName }} </span> 
+							      <span class="badge badge-info"> {{category}} </span> <span class="badge badge-primary"> Professor {{ professorName }} </span>
 							       </p>
 							    </div>
 						   	<div class="card-footer">
