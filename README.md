@@ -8,4 +8,4 @@ Contains Screens for an application that uses realtime speech to text to help st
 * jQuery
 
 # References
-* https://github.com/udit-mehta/ixd-skeleton
+* https://github.com/DesignAtLarge/ixd-skeleton
