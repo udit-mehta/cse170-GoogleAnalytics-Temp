@@ -6,3 +6,6 @@ Contains Screens for an application that uses realtime speech to text to help st
 * CSS3
 * Node.js
 * jQuery
+
+# References
+* https://github.com/DesignAtLarge/ixd-skeleton
