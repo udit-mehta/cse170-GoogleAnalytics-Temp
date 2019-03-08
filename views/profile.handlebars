@@ -4,6 +4,11 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link href="/css/project.css" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 	</head>
 	<body>
 		{{> toolbar }}
@@ -16,7 +21,7 @@
 		<div class="row"  style="background-color:silver;height:100%;padding-left: 7%;padding-right: 7%" >
 			<div class="col-md-12" align="center">
 				<br>
-				<form action="/profile" method="post">
+				<form id='profileForm' action="/profile" method="post">
 					<div class="form-group row">
 						<label for="inputEmail3" class="col-sm-2 col-form-label" style="width: 25%;">Email</label>
 						<div class="col-sm-8" style="width: 75%">
@@ -42,74 +47,32 @@
 					<br>
 
 					<div class="form-group row">
-						<label for="inputGroupSelect01" class="col-sm-2 col-form-label" style="display: block">Languages</label>
-						<div class="col-sm-2" align="right">
-  							<select name="languages[]" value="language1" class="custom-select" id="inputGroupSelect01">
-  								<option class="dropdown-item">
-										{{#with languages.[0] }}
-											{{name}}
-										{{/with}}
-								</option>
-    							<option class="dropdown-item">English</option>
-    							<option class="dropdown-item">French</option>
-   								<option class="dropdown-item">Hindi</option>
-   								<option class="dropdown-item">Korean</option>
-  							</select>
+						<label for="language" class="col-sm-2 col-form-label" style="width: 25%">Add a Language :</label>
+						<div class="col-sm-8" style="width: 75%">
+							<input name="language" type="text" class="form-control" id="language" placeholder="New Language ...">
 						</div>
-						<div class="col-sm-2" align="center">
-  							<select name="languages[]" value="language2" class="custom-select" id="inputGroupSelect02">
-  								<option class="dropdown-item">
-										{{#with languages.[1] }}
-											{{name}}
-										{{/with}}
-									</option>
-    							<option class="dropdown-item">English</option>
-    							<option class="dropdown-item">French</option>
-   								<option class="dropdown-item">Hindi</option>
-   								<option class="dropdown-item">Korean</option>
-  							</select>
-						</div>
-						<div class="col-sm-2" align="left">
-  							<select name="languages[]" value="language3" class="custom-select" id="inputGroupSelect03">
-  								<option class="dropdown-item">
-										{{#with languages.[2] }}
-											{{name}}
-										{{/with}}
-									</option>
-    							<option class="dropdown-item">English</option>
-    							<option class="dropdown-item">French</option>
-   								<option class="dropdown-item">Hindi</option>
-   								<option class="dropdown-item">Korean</option>
-	  						</select>
-						</div>
-						<div class="col-sm-2" align="left">
-  							<select name="languages[]" value="language4" class="custom-select" id="inputGroupSelect04">
-  								<option class="dropdown-item">
-										{{#with languages.[3] }}
-											{{name}}
-										{{/with}}
-									</option>
-    							<option class="dropdown-item">English</option>
-    							<option class="dropdown-item">French</option>
-   								<option class="dropdown-item">Hindi</option>
-   								<option class="dropdown-item">Korean</option>
-  							</select>
-						</div>
+						<div class="col-sm-2"></div>
 					</div>
+				</form>
+
+
+					{{#each languages}}
+						<form action="/removeLanguage" method="post">
+							{{name}}	<input id="removeLanguage{{name}}" type="hidden" name="removeLanguage" value="{{name}}" />
+												<a class="removeLanguage" onclick="this.closest('form').submit();"><i class="fa fa-trash-alt fa-lg" style="color:#e53010;"></i></a></br>
+						</form>
+					{{/each}}
+
 					<br>
 					<div class="form-group row">
 						<div class="col-sm-12" align="center">
-							<button type="submit" class="btn btn-primary" style="background-color:#006A96; padding-right: 3.5rem;padding-left: 3.5rem">Save</button>
+							<button type="submit" class="btn btn-primary" style="background-color:#006A96; padding-right: 3.5rem;padding-left: 3.5rem" onclick="$('#profileForm').submit();">Save</button>
 						</div>
 					</div>
-				</form>
 				<h1 id="message"> </h1>
 			</div>
 		</div>
 	</div>
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </html>

@@ -59,6 +59,26 @@ app.get('/profile', profile.view);
 
 //app.post('/profile', profile.updateProfile);
 
+app.post('/removeLanguage', function(req, res) {
+  let data = require('./data.json');
+  var fs = require('fs');
+  var fileName = './data.json';
+  var file = require(fileName);
+
+  if (req.body.removeLanguage) {
+
+    for( var i = 0; i < file.languages.length; i++){
+        if ( file.languages[i].name == req.body.removeLanguage) {
+          file.languages.splice(i, 1);
+        }
+    }
+
+    fs.writeFileSync(fileName, JSON.stringify(file));
+  }
+
+  res.render('index', data);
+});
+
 app.post('/profile', function(req, res) {
   let data = require('./data.json');
   var fs = require('fs');
@@ -70,13 +90,9 @@ app.post('/profile', function(req, res) {
     data.password = req.body.password;
   if( req.body.university )
     data.universityName = req.body.university;
-  if( req.body.languages )
-    {
-      file.languages = [];
-      req.body.languages.forEach(function (language) {
-        file.languages.push({"name": language});
-      });
-    }
+  if( req.body.language ) {
+    data.languages.push({"name": req.body.language});
+  }
   fs.writeFileSync(fileName, JSON.stringify(file));
   res.render('index', data);
 });
