@@ -94,7 +94,7 @@ body{
 {
 	float:right;
 	padding-top:20px;
-	padding-bottom:20px; 
+	padding-bottom:20px;
 	padding-right:20px;
 }
 
@@ -162,4 +162,8 @@ body{
 		border-radius: 10px;
 		background-color: #FFF;
 		width: 10%;
+}
+
+.removeLanguage {
+	color: "blue";
 }
