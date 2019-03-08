@@ -46,62 +46,6 @@
 					</div>
 					<br>
 
-					<!-- <div class="form-group row">
-						<label for="inputGroupSelect01" class="col-sm-2 col-form-label" style="display: block">Languages</label>
-						<div class="col-sm-2" align="right">
-  							<select name="languages[]" value="language1" class="custom-select" id="inputGroupSelect01">
-  								<option class="dropdown-item">
-										{{#with languages.[0] }}
-											{{name}}
-										{{/with}}
-								</option>
-    							<option class="dropdown-item">English</option>
-    							<option class="dropdown-item">French</option>
-   								<option class="dropdown-item">Hindi</option>
-   								<option class="dropdown-item">Korean</option>
-  							</select>
-						</div>
-						<div class="col-sm-2" align="center">
-  							<select name="languages[]" value="language2" class="custom-select" id="inputGroupSelect02">
-  								<option class="dropdown-item">
-										{{#with languages.[1] }}
-											{{name}}
-										{{/with}}
-									</option>
-    							<option class="dropdown-item">English</option>
-    							<option class="dropdown-item">French</option>
-   								<option class="dropdown-item">Hindi</option>
-   								<option class="dropdown-item">Korean</option>
-  							</select>
-						</div>
-						<div class="col-sm-2" align="left">
-  							<select name="languages[]" value="language3" class="custom-select" id="inputGroupSelect03">
-  								<option class="dropdown-item">
-										{{#with languages.[2] }}
-											{{name}}
-										{{/with}}
-									</option>
-    							<option class="dropdown-item">English</option>
-    							<option class="dropdown-item">French</option>
-   								<option class="dropdown-item">Hindi</option>
-   								<option class="dropdown-item">Korean</option>
-	  						</select>
-						</div>
-						<div class="col-sm-2" align="left">
-  							<select name="languages[]" value="language4" class="custom-select" id="inputGroupSelect04">
-  								<option class="dropdown-item">
-										{{#with languages.[3] }}
-											{{name}}
-										{{/with}}
-									</option>
-    							<option class="dropdown-item">English</option>
-    							<option class="dropdown-item">French</option>
-   								<option class="dropdown-item">Hindi</option>
-   								<option class="dropdown-item">Korean</option>
-  							</select>
-						</div>
-					</div> -->
-
 					<div class="form-group row">
 						<label for="language" class="col-sm-2 col-form-label" style="width: 25%">Add a Language :</label>
 						<div class="col-sm-8" style="width: 75%">
@@ -114,7 +58,7 @@
 
 					{{#each languages}}
 						<form action="/removeLanguage" method="post">
-							{{name}}	<input id='removeLanguage' type="hidden" name="removeLanguage" value="{{name}}" />
+							{{name}}	<input id="removeLanguage{{name}}" type="hidden" name="removeLanguage" value="{{name}}" />
 												<a class="removeLanguage" onclick="this.closest('form').submit();"><i class="fa fa-trash-alt fa-lg" style="color:#e53010;"></i></a></br>
 						</form>
 					{{/each}}

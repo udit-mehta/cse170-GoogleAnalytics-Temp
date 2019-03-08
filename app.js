@@ -60,7 +60,6 @@ app.get('/profile', profile.view);
 //app.post('/profile', profile.updateProfile);
 
 app.post('/removeLanguage', function(req, res) {
-  console.log("removeLanguage");
   let data = require('./data.json');
   var fs = require('fs');
   var fileName = './data.json';
