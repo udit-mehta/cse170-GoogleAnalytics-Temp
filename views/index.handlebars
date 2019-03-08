@@ -2,10 +2,6 @@
 	<head>
 		<title>Browse Lectures</title>
 		<style>
-			.blinking{
-				animation:blinkingText 1s infinite;
-			  background-color:red;
-			}
 			@keyframes blinkingText{
 				0%{		color: white;	}
 				39%{	color: transparent;	}
@@ -16,30 +12,31 @@
 		</style>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link href="/css/project.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+KR|Noto+Serif|Poppins" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
 		{{> toolbar }}
 					<div class="row" style="background-color:white">
-						<div class="col-md-12" align="center" style="padding-top:1%;padding-bottom:1%">
+						<div class="col-md-12" align="center" style="padding-top:4%">
 									<div class="dropdown">
-									  <button class="btn btn-secondary btn-lg dropdown-toggle btn-success" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton" >
+									  <button class="btn btn-secondary btn-lg dropdown-toggle btn-success" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton2" >
 									    {{selection}}
 									  </button>
 									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 											<a class="dropdown-item" href="/?dropdown=Physics&professorName=Udit" id="classa">Physics</a>
 											<a class="dropdown-item" href="/?dropdown=Chemistry&professorName=Quentin" id="classb">Chemistry</a>
-											<a class="dropdown-item" href="/?dropdown=Math&professorName=Eric" id="classb">Math</a>
-											<a class="dropdown-item" href="/?dropdown=Recently_Uploaded&professorName=Udit" id="classb">All classes</a>
+											<a class="dropdown-item" href="/?dropdown=Math&professorName=Erich" id="classb">Math</a>
+											<a class="dropdown-item" href="/?dropdown=All%20Classes&professorName=Udit" id="classb">All Classes</a>
 											<a class="dropdown-item" href="/?dropdown=Favourites&professorName=Quentin" id="classb">Favourites</a>
 									  </div>
 									</div>
 						</div>
 					</div>
 
-		 <div class="row" style="background-color:white; height:100%">
+		 <div class="row" style="background-color:white; height:100%; padding: 4%">
 			 {{#each records }}
-					<div class="col-md-3">
+					<div class="col-md-4 vids">
 	        	<a href="/playback">
 			    		<div class="card">
 						    <img class="card-img-top" src="{{ picture }}" alt="Card image cap">

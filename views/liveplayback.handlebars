@@ -41,7 +41,7 @@
     <body>
       {{> toolbar }}
         <div class="row">
-            <div class="col-md-12" style="height:50%; background-color:white">
+            <div class="col-md-12" style="height:25%; background-color:white">
                 <svg preserveAspectRatio="none" id="visualizer" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
                         <mask id="mask">
@@ -60,8 +60,15 @@
             </div>
         </div>
 
-        <div class="row" style="height: 12%; background-color:white">
-          <div class="col-md-2" style="background-color:white">
+        <div class="row" style="height: 9%; background-color:white">
+          <div class="col-md-9" style="width: 85%">
+                <div class="card">
+                    <div class="col-md-9">
+                        <marquee class="text-muted" id="subtitles" style="font-size: 250%"> Listening to the Professor </marquee>
+                    </div>
+                </div>
+            </div>
+          <div class="col-md-2" style="background-color:white;width: 10%;padding-right: 0;padding-left: 11%">
             <a>
             <i  class="fas fa-cog fa-lg modalpos" data-toggle="modal" data-target=".bd-example-modal-sm" ></i>
                                       <!-- Modal -->
@@ -112,19 +119,13 @@
 
             </a>
           </div>
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="col-md-9">
-                        <marquee class="text-muted" id="subtitles" style="font-size: 250%"> Listening to the Professor </marquee>
-                    </div>
-                </div>
-            </div>
+            
 
         </div>
-        <div class="row" style="height: 50%; background-color:white">
+        <div class="row" style="height: 53%; background-color:white">
             <div class="col-md-12" >
                 <div class="card" style="height: 100%">
-                    <samp class="breadcrumb" id="transcript" style="height: 100%;font-size: 250%; overflow-y:scroll"> Translated text :  </samp>
+                    <samp class="breadcrumb" id="transcript" style="height: 100%;font-size: 190%; overflow-y:scroll; margin-bottom: 0"> Translated text :  </samp>
                 </div>
             </div>
         </div>

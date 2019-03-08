@@ -7,41 +7,43 @@
 </head>
 <body style="background-color: white">
 	{{> toolbar }}
-	<div class="row" style="background-color:#006A96; height:25%;" >
-		<div class="col-md-12" align="center" style="background-color: white;height: 45%;">
-      <br>
-  				<!--<hr class="my-3">-->
-  				<!--<input class="form-control" type="text" placeholder="Search" aria-label="Search">-->
-
-		</div>
+	<div class="row" style="background-color: white; height:12%;" >
 		<hr class="my-3">
 		<div class="col-md-12" align="center" >
-
-  				<h3 style="color: white;background-color: #006A96">Frequently Asked Questions</h3>
+        <br>
+  				<h3 style="color: #006A96;background-color: white">Frequently Asked Questions</h3>
 
 		</div>
 	</div>
-	<div class="row" style="background-color: silver; height:60% ">
+	<div class="row" style="background-color: white; height:60% ">
 		<div class="col-md-12">
 			<div class="list-group" style="background-color: white; padding-left: 3%; padding-right: 3%">
-  				<p class="list-group-item flex-column align-items-start" style="background-color: white; border-color: white">
-   					<div class="d-flex w-100 justify-content-between">
-      					<h4 class="mb-1">How do I view a video?</h4>
-    				</div>
-   					<p class="mb-1" style="color:gray">From <b style="color: black">Home</b>, click the <b style="color: black">Play</b> button on the thumbnail of the video you want to watch to navigate to that video's playback page.</p>
+  				<p class="list-group-item flex-column align-items-start" style="background-color: #006A96; border-color: white;border-top-color: silver">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#question1" aria-expanded="true" aria-controls="question1" style="color: transparent;">
+   					  <div class="d-flex w-100 justify-content-between">
+      					 <h4 class="mb-1" style="color: white">How do I view a video?</h4>
+    				  </div>
+            </button>
+   					<p class="mb-1 collapse show"id="question1" style="color:gray">From <b style="color: black">Home</b>, click the <b style="color: black">Play</b> button on the thumbnail of the video you want to watch to navigate to that video's playback page.</p>
   				</p>
-  				<p class="list-group-item flex-column align-items-start" style="background-color: white; border-color: white; border-top-color: silver">
-    				<div class="d-flex w-100 justify-content-between">
-     					<h4 class="mb-1">How do I add a language for subtitles or transcripts?</h4>
-    				</div>
-    				<p class="mb-1" style="color:gray">Under <b style="color: black">Profile</b>, click a <b style="color: black">Language</b> and select a language to add it to your languages. </p>
+  				<p class="list-group-item flex-column align-items-start" style="background-color: #006A96; border-color: white; border-top-color: silver">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#question2" aria-expanded="true" aria-controls="question2" style="color: transparent;">
+    				  <div class="d-flex w-100 justify-content-between">
+     					  <h4 class="mb-1" style="color: white">How do I add a language?</h4>
+    				  </div>
+            </button>
+    				<p class="mb-1 collapse show" id="question2" style="color:gray">Under <b style="color: black">Profile</b>, click a <b style="color: black">Language</b> and select a language to add it to your languages. </p>
   				</p>
-  				<p class="list-group-item flex-column align-items-start" style="background-color: white; border-color: white; border-top-color: silver">
-    				<div class="d-flex w-100 justify-content-between">
-     					 <h4 class="mb-1">How do I remove subtitles or transcripts?</h4>
-   					</div>
-   					<p class="mb-1" style="color:gray">In the <b style="color: black">Playback</b> page, click the <b style="color: black">Gear Icon</b> to toggle subtitle or transcript visibility.</p>
+
+  				<p class="list-group-item flex-column align-items-start" style="background-color: #006A96; border-color: white; border-top-color: silver">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#question3" aria-expanded="true" aria-controls="question3" style="color: transparent;">
+    				  <div class="d-flex w-100 justify-content-between">
+     					  <h4 class="mb-1" style="color: white">How do I remove subtitles?</h4>
+   					  </div>
+            </button>
+   					<p class="mb-1 collapse show" id="question3" style="color:gray">In the <b style="color: black">Playback</b> page, click the <b style="color: black">Gear Icon</b> to toggle subtitle or transcript visibility.</p>
   				</p>
+
 			</div>
 		</div>
 	</div>
